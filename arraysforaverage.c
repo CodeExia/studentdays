@@ -2,10 +2,10 @@
 
 int main()
 {
-    long a;
+    int a;
     printf("How many subjects do you have?\n");
     scanf("%d", &a);
-    long grades[a];
+    int grades[a];
 
     for (int i = 0; i <= a; i++, grades[a] + grades[++a])
     {
