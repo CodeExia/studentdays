@@ -7,7 +7,7 @@ int main ()
     printf("What is your number?\n");
     scanf("%d", &n);
 
-    switch(++n)
+    switch(n)
     {
         case 1: printf("Trinnah\n");
             break;
