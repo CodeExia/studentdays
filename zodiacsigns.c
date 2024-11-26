@@ -197,11 +197,11 @@ int main()
         if (inputday >= 1 && inputday <= 21)
         {
             printf("%s you are a ♏!\n", name);
-            return 0;2
+            return 0;
         }
         else if (inputday >= 22 && inputday <= 30)
         {
-            printf("%s you are a ♐11!\n", name);
+            printf("%s you are a ♐!\n", name);
             return 0;
         }
         else
@@ -234,7 +234,5 @@ int main()
         return 2;
     }
 
+    return 1;
 
-    return 0;
-
-}

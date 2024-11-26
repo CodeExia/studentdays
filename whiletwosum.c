@@ -11,11 +11,11 @@ int main()
 
     for (int i = 0; i < 4; ++i)
     {
-        if (num[g] + num[++i] == target)
+        if (num[g] + num[i + 1] == target)
         {
             num[--i];
             printf("%d and ", num[i]);
-            printf("%d", num[++i]);
+            printf("%d", num[i + 1]);
             return 0;
         }
     }

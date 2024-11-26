@@ -17,7 +17,7 @@ int main()
     {
         if (meal == 1)
         {
-            price =  
+            price =  meal 
         }
     }
 }
