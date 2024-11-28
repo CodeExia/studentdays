@@ -23,7 +23,7 @@ int main()
         }
     }
     
-    printf("Error\n");
+    printf("Not found.\n");
     return 1;
 
 }
