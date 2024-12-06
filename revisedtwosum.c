@@ -11,17 +11,14 @@ int main()
     printf("What is your targeted number?\n");
     scanf("%d", &target);
 
-    for (int k = 0; k < 4; ++k)
-    {
+    for (int k = 0; k < 4; ++k) 
         for (int i = 0; i < 4; ++i)
-        {
             if (num[k] + num[i + 1] == target)
             {
-                printf("%d and %d\n", num[k], num[i + 1]);
+                printf("%d and %d\n", k, i + 1);
                 return 0;
             }
-        }
-    }
+
     
     printf("Not found.\n");
     return 1;
