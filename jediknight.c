@@ -32,7 +32,7 @@ int main()
             {
                 printf("Congrats! %s you are accepted into the Jedi Knight Academy!", name);
             }
-            else {
+            else{
             printf("Unfortunately, %s you are not accepted as you are not a citizen of the Planet Endor\n", name);
             }
             return 0;
