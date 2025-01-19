@@ -9,7 +9,7 @@ int main()
     {
         for (int f = 0; f < 17; f++)
         {
-            if (unsorted[i] < unsorted[f])
+            if (unsorted[i] > unsorted[f])
             {
                 temp = unsorted[i];
                 unsorted[i] = unsorted[f];
