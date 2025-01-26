@@ -10,4 +10,4 @@ int main()
     n%2 == 1? printf("Your number is odd.\n");: printf("Your number is even.\n");
 
     return 0;
-}
+} 
