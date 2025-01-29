@@ -2,6 +2,16 @@
 #include <math.h>
 
 //math.h isn't working
+double power(int number, int size)
+{
+    double result = 1;
+
+    for (int i = 0; i < size; i++)
+    {
+        result *= number;
+    }
+    return result;
+}
 
 int bintodec (int binary)
 {
@@ -15,7 +25,7 @@ int bintodec (int binary)
         digit = binary % 10;
 
         //digit will only be either 1 and 0, so we can just multiply the increasing positions of power.
-        result += digit * pow(2, counter);
+        result += digit * power(2, counter);
 
         //Para matanggal ung digit na cinalculate na natin
         binary /= 10;

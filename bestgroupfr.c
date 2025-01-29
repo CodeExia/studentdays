@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include "namengfunction.h"
+#include <string.h>
+#include "jopnumbawan.h"
 
 int main()
 {
@@ -10,12 +11,13 @@ int main()
     printf("Please enter a binary number:\n");
     scanf("%s", binary);
 
-    length = sizeof(binary/binary[0]);
+    //this is to make sure it'a actually a binary number
+    length = strlen(binary);
     for (int i = 0; i < length; i++)
     {
-        if (binary[i] != '1' || binary[i] != '0')
+        if (binary[i] != '1' && binary[i] != '0')
         {
-            printf("Error, binary numbers can only contain 1s or 0s.\n);
+            printf("Error, please enter a valid binary number.\n");
             return 1;
         }
     }
