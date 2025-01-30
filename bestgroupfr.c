@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "jopnumbawan.h"
+#include "D:\Code\function.h"
 
 int main()
 {
