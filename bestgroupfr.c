@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "D:\Code\function.h"
+#include "function.h"
 
 int main()
 {

@@ -12,6 +12,7 @@
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.linuxnativedontupload",
+                "-lm"
             ],
             "group": {
                 "kind": "build",
