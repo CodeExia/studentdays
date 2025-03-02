@@ -7,7 +7,10 @@ int main()
     char binary[80];
     int length;
     int decimal;
+    int decision;
 
+    while (decision == 1)
+    {
     printf("Please enter a binary number:\n");
     scanf("%s", binary);
 
@@ -25,5 +28,8 @@ int main()
     decimal = binarytodecl(binary);
 
     printf("%s into decimal is: %d", binary, decimal);
+
+    printf("");
+    }
     return 0;
 }

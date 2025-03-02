@@ -7,6 +7,7 @@ int main()
     
     printf("What is your number?\n");
     scanf("%d", &n);
+     
 
     n %= 2;
 
