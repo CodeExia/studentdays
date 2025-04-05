@@ -48,3 +48,8 @@ void bubbleSort(int array[])
                     array[j+1] = temp;
                 }
 }
+
+while ((scanf("%d", &column) != 1) || column <= 0)
+{
+    while (getchar () != '\n');
+}

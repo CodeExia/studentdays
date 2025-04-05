@@ -1,50 +1,52 @@
 #include <stdio.h>
 
+int dividebythree(int array[][3], int column, int row);
+
+
 int main()
 {
-
-    int decision = 1;
-    while (decision == 1);
-    {
-        int array[2][3];
+        int array[3][3];
         int key;
         int element = 1;
         int bruh;
 
         printf("Please enter 6 numbers:\n");
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 3; i++)
         {
             for (int t = 0; t < 3; t++)
             {
                 scanf("%d", &array[i][t]);
             }
+         
         }
 
-        printf("Please enter the number you want to find.\n");
-        scanf("%d", &key);
+        printf("\n");
 
-        for (int bruh = 0; bruh < 2; bruh++);
+        for (int i = 0; i < 3; i++)
         {
             for (int t = 0; t < 3; t++)
             {
-                if (array [bruh][t] == key)
-                {
-                    printf("Your number exists at array[%d][%d]", bruh, t);
-                    printf("and is the %d element.\n", element);
-                    break;
-                }
-                element++;
+                printf("%d ", array[i][t]);
             }
+            printf("\n");
         }
 
-        if (element > 6)
-        {
-            printf("Your number does not exist.\n");
-        }
+        printf("\n");
+        dividebythree(array, 3, 3);
+        
+    return 0;
+}
 
-    }
-
-    
+int dividebythree(int array[][3], int column, int row)
+{
+    for (int i = 0; i < column; i++)
+        for (int j = 0; j < row; j++)
+            {
+                if ((array[i][j]%3) > 0)
+                    continue;
+                else
+                    printf("%d is divisible by three, and can be found at [%d][%d].\n", array[i][j], i,j);
+            }
     return 0;
 }
