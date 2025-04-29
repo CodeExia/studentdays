@@ -4,7 +4,7 @@ int main(){
 	int array[100];
 	int *p = array;
 	
-	while(1){
+	while(p >= array){
 		//The loop goes infinitely until the value entered is 0
 		printf("Enter value\n");
 		scanf("%d",p);
