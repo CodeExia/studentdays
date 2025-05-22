@@ -10,11 +10,12 @@ struct hand{
 	
 }card[5];
 
-void printHand(struct hand current[]); //Pass the whole structure and print
-void sort(struct hand card[]); //Sorting function by passing the structure array
+void printHand(struct hand current); //Pass the whole structure and print
+void flushChecking(struct hand current[]); //Sorting function by passing the structure array
 void sortPtr(struct hand *ptr); //Sorting function using a pointer
 int straightFunc(int first, int second); //Pass the member to determine the straightness
 
+static int flush = 1;  //Flush is true by default, if it becomes zero later on it means it's not a flush. Global so that the functions can change it.
 
 int main()
 {
@@ -25,7 +26,6 @@ int main()
 	int counts[13] = {0};
 	int pair = 0, three = 0, four = 0;
 	//Switches for flush or straight results
-	int flush = 1; //Flush is true by default, if it becomes zero later on it means it's not a flush
 	int straight = 1; //This is also true by default so by the cheking it becomes zero
 	
 	for (int i = 0; i < numberCards; i++)
@@ -37,20 +37,20 @@ int main()
 		//It starts at 2 so when we have to subtract it by 2, the index would start at 0.
 		scanf("%d", &card[i].value);
 		
+		printHand(card[i]);
+		
 		//This is to count the number of times each value has appeared
 		int index = card[i].value - 2;
         if (index < 0 || index >= maxVal) index = 0; //There are only 13 possible card values. Also to check if it goes out of bounds.
         	counts[index]++;
 		
-		//Flush checking. This is to see if they all have the same suits
-		if (i > 0 && card[i].suit != card[0].suit)
-			flush = 0;
 	}
+	
+	///Flush checking. This is to see if they all have the same suits
+	flushChecking(card);
 	
 	//Sorting using pointer
 	sortPtr(&card);
-	//Sorting using whole structure
-	sort(card);
 	
 	
 	for (int i = 0; i < numberCards-1; i++)
@@ -76,10 +76,7 @@ int main()
 		if (counts[i] == 4)
 			four++;
 	}
-	
-	printf("\nYour current hand is:\n");
-	printHand(card);
-	
+		
 	
 	//Since every switch that needed to be checked is now done, we score now in the order of highest ranking to lowest.
 	if (straight && flush)
@@ -108,19 +105,6 @@ int main()
 	return 0;
 }
 
-void sort(struct hand card[])
-{
-	//Sorting for easier straight checking
-	for (int i = 0; i < numberCards-1; i++)
-		for (int j = 0; j < numberCards-1; j++)
-			if (card[j].value > card[j+1].value)
-			{
-				struct hand temp = card[j];
-				card[j] = card[j+1];
-				card[j+1] = temp;
-			}
-}
-
 void sortPtr(struct hand *ptr)
 {
 	//Sorting for easier straight checking
@@ -134,10 +118,17 @@ void sortPtr(struct hand *ptr)
 			}
 }
 
-void printHand(struct hand current[])
+		
+void flushChecking(struct hand current[])
 {
 	for (int i = 0; i < 5; i++)
-		printf("%d%c\t", current[i].value, current[i].suit);
+		if (i > 0 && card[i].suit != card[0].suit)
+			flush = 0;
+}
+
+void printHand(struct hand current)
+{
+	printf("%d%c\t", current.value, current.suit);
 	printf("\n");
 }
 
