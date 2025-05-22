@@ -6,7 +6,7 @@ struct seats{
 	int availability;
 }seat[5][4];
 
-void displaySeats(struct seats seat[5][4]); //Passing the whole structure
+void displaySeats(struct seats seat); //Passing the whole structure
 void initialization(struct seats array[5][4]); //Initialize passing the whole structure as array
 int errorChecking(int avail); //Passing individual member
 void displaySeatsPtr(struct seats *seat); //Passing the struct as pointer
@@ -64,8 +64,17 @@ int main()
 	}
 	
 	printf("\nFinal seating arrangment:\n");
-	displaySeats(seat);
+
 	//Passing the whole structure into a function that prints it.
+	printf("\nSeat availability:\n");
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d\t", i+1); //This is the initial numbers. +1 so it doesn't start from zero.
+			for (int j = 0; j < 4; j++)
+				displaySeats(seat[i][j]);
+		printf("\n"); //Just an escape character to the next line
+				
+	}
 	
 	return 0;
 }
@@ -97,21 +106,12 @@ int errorChecking(int avail)
 		return 0;
 }
 
-void displaySeats(struct seats seat[5][4])
+void displaySeats(struct seats seat)
 {
-	printf("\nSeat availability:\n");
-	for (int i = 0; i < 5; i++)
-	{
-		printf("%d\t", i+1); //This is the initial numbers. +1 so it doesn't start from zero.
-		for (int j = 0; j < 4; j++)
-		{
-			if (seat[i][j].availability) //It's just a switch. If its 1 or occupied, then it returns a big X.
-				printf("X\t");
-			else 
-				printf("%c\t", seat[i][j].column);
-		}
-		printf("\n"); //Just an escape character to the next line
-	}
+	if (seat.availability) //It's just a switch. If its 1 or occupied, then it returns a big X.
+		printf("X\t");
+	else 
+		printf("%c\t", seat.column);
 }
 
 void displaySeatsPtr(struct seats *e)
@@ -131,22 +131,6 @@ void displaySeatsPtr(struct seats *e)
 	}
 }
 
-void displaySeatsArr(struct seats a[5][4])
-{
-	printf("\nSeat availability:\n");
-	for (int i = 0; i < 5; i++)
-	{
-		printf("%d\t", i+1); //This is the initial numbers. +1 so it doesn't start from zero.
-		for (int j = 0; j < 4; j++)
-		{
-			if (a[i][j].availability) //It's just a switch. If its 1 or occupied, then it returns a big X.
-				printf("X\t");
-			else 
-				printf("%c\t", a[i][j].column);
-		}
-		printf("\n"); //Just an escape character to the next line
-	}
-}
 
 
 
