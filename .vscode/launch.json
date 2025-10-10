@@ -20,8 +20,8 @@
     {
       "type": "lldb",
       "request": "launch",
-      "name": "Debug",
-      "program": "${workspaceFolder}/${fileBasenameNoExtension}.linuxnativedontupload",
+      "name": "Debug C Programs",
+      "program": "${workspaceFolder}/C/${fileBasenameNoExtension}.linuxnativedontupload",
       "args": [],
       "cwd": "${workspaceFolder}",
       "preLaunchTask": "build"
