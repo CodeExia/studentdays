@@ -2,6 +2,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Array1",
+      "request": "launch",
+      "mainClass": "Array1",
+      "projectName": "studentdays_5cc6f269"
+    },
+    {
       "type": "lldb",
       "request": "launch",
       "name": "Launch",

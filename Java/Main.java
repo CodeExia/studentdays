@@ -2,8 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int x = 10;
-        int y = 5;
-        System.out.println(Math.min(x, y));
+        int[][] numbers = {{1,2,3},{5,6,7,8,9,10}};
+
+        for (int i = 0; i < numbers.length; i++)
+        {
+            for (int j = 0; j < numbers[i].length; j++)
+            {
+                System.out.print(numbers[i][j] + " ");
+            }
+            System.out.println();
+        }
     }
-}f
+}

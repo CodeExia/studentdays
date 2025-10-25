@@ -1,13 +1,9 @@
 import numpy as np
 
-array = [2,3,4]
 
-scaled = 2*array
-print(scaled)
-
-x = np.array([2,3,4])
+x = np.array([2,3],
+            [1,2])
 y = np.array([1,-1,0])
-2*x
+z = np.linalg.det(x)
 
-array([4,6,8])
-(2*x)+(3*y)
+print(z)
